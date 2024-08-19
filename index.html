@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- <button id="btn">hello worls</button> -->
+    <div class="Calculater">
+      <div class="Calculater_box box" id="normal">
+        <div class="display_section" id="display1">0</div>
+
+        <div class="other_section">
+          <div id="to_scientific" class="interchange">Stf</div>
+          <i class="fa-solid fa-delete-left" onclick="backspace()"></i>
+        </div>
+
+        <div class="number_section">
+          <div
+            class="clear_display circle"
+            style="color: red"
+            onclick="clearDisplay()"
+          >
+            <h3>C</h3>
+          </div>
+          <div
+            class="open_braket circle special"
+            onclick="brakets('open_braket')"
+          >
+            (
+          </div>
+          <div
+            class="close_braket circle special"
+            onclick="brakets('close_braket')"
+          >
+            )
+          </div>
+          <div class=" circle special" onclick="inputOperator('/')">
+            <i class="fa-solid fa-divide"></i>
+          </div>
+
+          <div class="clear_display circle" onclick="inputDigit('7')">7</div>
+          <div class="open_braket circle" onclick="inputDigit('8')">8</div>
+          <div class="close_braket circle" onclick="inputDigit('9')">9</div>
+          <div class=" circle special" onclick="inputOperator('*')">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+
+          <div class="clear_display circle" onclick="inputDigit('4')">4</div>
+          <div class="open_braket circle" onclick="inputDigit('5')">5</div>
+          <div class="close_braket circle" onclick="inputDigit('6')">6</div>
+          <div class=" circle special" onclick="inputOperator('-')">
+            <i class="fa-solid fa-minus"></i>
+          </div>
+
+          <div class="clear_display circle" onclick="inputDigit('1')">1</div>
+          <div class="open_braket circle" onclick="inputDigit('2')">2</div>
+          <div class="close_braket circle" onclick="inputDigit('3')">3</div>
+          <div class=" circle special" onclick="inputOperator('+')">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+
+          <div class="clear_display circle">+/-</div>
+          <div class="open_braket circle" onclick="inputDigit('0')">0</div>
+          <div class="close_braket circle" onclick="inputOperator('.')">.</div>
+          <div class=" circle equal" onclick="calculate()"><i class="fa-solid fa-equals"></i></div>
+        </div>
+      </div>
+
+      <div class="scientific_mode box" id="scientific">
+        <div class="display_section " id="display2">0</div>
+        <div class="other_section">
+          <div id="to_normal" class="interchange">Nrm</div>
+          <i class="fa-solid fa-delete-left" onclick="backspace()"></i>
+        </div>
+        <div class="advance_section" style="border:2px solid black">
+
+
+          <div class="ellipse" id="hell"> <i class="fa-solid fa-right-left"></i> </div>
+          <div class="ellipse"> Rad </div>
+
+           <div class="ellipse AA" onclick="type_function('sqrt')">sq</i> </div>       <!--     ##################### -->
+          <div class="ellipse BB"  onclick="type_function('cbrt')">cb root</div>
+
+          <div class="clear_display ellipse "  onclick="clearDisplay()" style="color:red"> C </div>
+          <div class="open_braket ellipse special1"  onclick="brakets('open_braket')"> ( </div>
+          <div class="cloce_braket ellipse special1"  onclick="brakets('close_braket')"> ) </div>
+          <div class="ellipse special1" onclick="inputOperator('/')"> <i class="fa-solid fa-divide"></i> </div>
+
+
+          <div class="ellipse AA" onclick="type_function('sin')"> sin </div>
+          <div class="ellipse BB" onclick="type_function('asin')"> asin</div>
+          <div class="ellipse AA" onclick="type_function('cos')"> cos </div>                 <!--     ##################### -->
+          <div class="ellipse BB" onclick="type_function('acos')">acos</div>
+          <div class="ellipse AA" onclick="type_function('tan')"> tan </div>
+          <div class="ellipse BB" onclick="type_function('atan')">atan</div>
+
+          <div class="ellipse" onclick="inputDigit('7')"> 7 </div>
+          <div class="ellipse" onclick="inputDigit('8')"> 8 </div>
+          <div class="ellipse" onclick="inputDigit('9')"> 9 </div>
+          <div class="ellipse special1" onclick="inputOperator('*')"> <i class="fa-solid fa-xmark"></i> </div>
+
+
+          <div class="ellipse AA" onclick="type_function('ln')"> ln </div>
+          <div class="ellipse BB" onclick="type_function('sinh')">sinh</div>
+          <div class="ellipse AA" onclick="type_function('logten')"> log </div>
+          <div class="ellipse BB" onclick="type_function('cosh')">cosh</div>                      <!--     ##################### -->
+          <div class="ellipse AA" onclick="type_function('inverse')"> 1/x </div>
+          <div class="ellipse BB" onclick="type_function('tanh')">tanh</div>
+
+          <div class="ellipse" onclick="inputDigit('4')"> 4 </div>
+          <div class="ellipse" onclick="inputDigit('5')"> 5 </div>
+          <div class="ellipse" onclick="inputDigit('6')"> 6 </div>
+          <div class="ellipse special1" onclick="inputOperator('-')"> <i class="fa-solid fa-minus"></i> </div>
+
+          
+          <div class="ellipse AA" onclick="type_function('expo')"> e^x </div>
+          <div class="ellipse BB" onclick="type_function('Asinh')">asinh</div>
+          <div class="ellipse AA" onclick="type_function('square1')"> x^2 </div> 
+          <div class="ellipse BB" onclick="type_function('Acosh')">Acosh</div>                           <!--     ##################### -->
+          <div class="ellipse AA" onclick="type_function('power1')"> x^y</div>
+          <div class="ellipse BB" onclick="type_function('Atanh')">Atanh</div>
+
+          <div class="ellipse" onclick="inputDigit('1')"> 1 </div>
+          <div class="ellipse" onclick="inputDigit('2')"> 2 </div>
+          <div class="ellipse" onclick="inputDigit('3')"> 3 </div>
+          <div class="ellipse special1" onclick="inputOperator('+')"> <i class="fa-solid fa-plus"></i></div>
+
+
+          <div class="ellipse AA" onclick="type_function('mod')"> |x| </div>
+          <div class="ellipse BB" onclick="inputDigit('2^')">2^x</div>
+          <div class="ellipse AA" onclick="type_function('pie')"> Pi </div> 
+          <div class="ellipse BB" onclick="type_function('cube1')">x^3</div>                               <!--     ##################### -->
+          <div class="ellipse AA" onclick="type_function('exp')"> e </div>
+          <div class="ellipse BB" onclick="type_function('fac')">!</div>
+
+          <div class="ellipse"> +/- </div>
+          <div class="ellipse" onclick="inputDigit('0')"> 0 </div>
+          <div class="ellipse" onclick="inputOperator('.')"> . </div>
+          <div class="ellipse equal1" onclick="calculate()"><i class="fa-solid fa-equals"></i></div>
+          
+
+
+
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
